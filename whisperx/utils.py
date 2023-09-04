@@ -224,7 +224,8 @@ class SubtitlesWriter(ResultWriter):
         raw_max_line_width: Optional[int] = options["max_line_width"]
         max_line_count: Optional[int] = options["max_line_count"]
         highlight_words: bool = options["highlight_words"]
-        max_line_width = 1000 if raw_max_line_width is None else raw_max_line_width
+        max_line_width = 250 if raw_max_line_width is None else raw_max_line_width
+        max_line_count = 1 if max_line_count is None else max_line_count
         preserve_segments = max_line_count is None or raw_max_line_width is None
         
         if len(result["segments"]) == 0:
